@@ -4,6 +4,7 @@ import BarreDeRecherche from "./components/barreDeRecherche";
 import ListOfRobots from "./components/listOfRobots";
 import "./app.css";
 import Robot from "./components/robot";
+import Loader from "./components/loader";
 
 const App = () => {
   const [robots, setRobots] = useState([]);
@@ -48,7 +49,7 @@ const App = () => {
   return (
     <div className="container">
       {loading ? (
-        <div className="loader"></div>
+        <Loader />
       ) : (
         <>
           {location.pathname === "/" && (
