@@ -1,0 +1,166 @@
+@font-face {
+  font-family: "Sega font";
+  src: url(./sega/SEGA.TTF);
+}
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color:#338180; */
+  background: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#071b52),
+    to(#008080)
+  );
+  background: -webkit-linear-gradient(right, #071b52 0%, #008080 100%);
+  background: -o-linear-gradient(
+    right,
+    rgba(7, 27, 82, 1) 0%,
+    rgba(0, 128, 128, 1) 100%
+  );
+  background: linear-gradient(
+    to left,
+    rgba(7, 27, 82, 1) 0%,
+    rgba(0, 128, 128, 1) 100%
+  );
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+.pageTitle {
+  text-align: center;
+  font-size: 3rem;
+  color: #0ccac4;
+  display: block;
+  font-family: "Sega font";
+  font-weight: normal;
+}
+.barreDeRecherche {
+  text-align: center;
+}
+.barreDeRecherche input {
+  border: 1px solid #19a974;
+  background-color: #cdecff;
+  padding: 1rem;
+  font-size: 1rem;
+}
+.barreDeRecherche input:focus {
+  outline: none;
+}
+.listRobot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+}
+.cardRobot {
+  background-color: #9eebcf;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s;
+}
+.robotFullInformation {
+  background-color: #9eebcf;
+  padding: 1rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border-radius: 8px;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  display: flex;
+  width: 80%;
+}
+.robotImgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-20%);
+}
+.robotInformation img {
+  width: 20vh;
+}
+@media screen and (max-width: 700px) {
+  .robotFullInformation {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.cardRobot:hover {
+  transform: scale(1.05);
+}
+
+.robotName {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.robotDetails {
+  font-size: 1rem;
+}
+.robotInformationB--bold {
+  font-weight: bold;
+}
+.linkToHome {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: rgb(87, 27, 12);
+  font-weight: bold;
+  border: 1px solid rgba(0, 128, 128, 1);
+  padding: 0.5rem;
+  border-radius: 8px;
+  background-color: rgba(0, 128, 128, 1);
+}
+.linkToRobotFullInformation {
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgb(133, 53, 33);
+  font-weight: bold;
+  border: 1px solid rgba(0, 128, 128, 1);
+  background-color: rgba(0, 128, 128, 1);
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+.robotEmail {
+  font-size: 0.8rem;
+  text-align: center;
+}
+.robotPicture {
+  width: 10vw;
+}
+.robotPicture img {
+  width: 10vw;
+}
+
+.loader {
+  margin: 0 auto;
+  /* border: 20px solid black; */
+  border-left: 20px solid indianred;
+  border-right: 20px solid indigo;
+  border-bottom: 20px solid white;
+  border-top: 20px solid white;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  margin-top: 30vh;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.robotFullInformationLoader {
+  color: rgb(47, 44, 214);
+  font-size: 1rem;
+}
