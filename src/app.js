@@ -12,7 +12,7 @@ const App = () => {
 
   useEffect(function () {
     setLoading(true);
-    fetch("http://jsonplaceholder.typicode.com/users")
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then(function (result) {
         return result.json();
       })

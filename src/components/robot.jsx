@@ -5,7 +5,7 @@ const Robot = (props) => {
   const [personalRobot, setPersonalRobot] = useState([]);
 
   useEffect(function () {
-    fetch("http://jsonplaceholder.typicode.com/users")
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then(function (result) {
         return result.json();
       })
