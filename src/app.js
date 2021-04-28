@@ -6,8 +6,9 @@ import "./app.css";
 import Robot from "./components/robot";
 import Loader from "./components/loader";
 
-const App = () => {
+const App = (props) => {
   const [robots, setRobots] = useState([]);
+  const [robotFullDetails, setRobotFullDetails] = useState([]);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
 
@@ -24,9 +25,11 @@ const App = () => {
 
         setLoading(false);
         setRobots(robotsFriendsList);
+        setRobotFullDetails(data);
         setFriends(robotsFriendsList);
       });
   }, []);
+
   let [friends, setFriends] = useState(robots);
 
   const handleChange = (e) => {
@@ -36,14 +39,6 @@ const App = () => {
       return robot.name.toLowerCase().includes(e.target.value.toLowerCase());
     });
     setFriends(filteredFriendsList);
-  };
-
-  const MainContenant = () => {
-    return (
-      <div>
-        <ListOfRobots friends={friends} />
-      </div>
-    );
   };
 
   return (
@@ -65,8 +60,17 @@ const App = () => {
             />
           )}
           <Switch>
-            <Route exact path="/" component={MainContenant} />
-            <Route path="/robot/:id" component={Robot} />
+            <Route
+              exact
+              path="/"
+              render={() => <ListOfRobots friends={friends} />}
+            />
+            <Route
+              path="/robot/:id"
+              render={({ match }) => (
+                <Robot fullInformation={robotFullDetails} match={match} />
+              )}
+            />
           </Switch>
         </>
       )}
