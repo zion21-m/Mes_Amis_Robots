@@ -110,25 +110,25 @@ body {
 .linkToHome {
   font-size: 0.9rem;
   text-decoration: none;
-  color: rgb(87, 27, 12);
+  color: #dad7cd;
   font-weight: bold;
-  border: 1px solid rgba(0, 128, 128, 1);
+  border: 1px solid #118ab2;
   padding: 0.5rem;
   border-radius: 8px;
-  background-color: rgba(0, 128, 128, 1);
+  background-color: #118ab2;
 }
 .linkToRobotFullInformation {
   font-size: 1rem;
   text-decoration: none;
-  color: rgb(133, 53, 33);
+  color: #dad7cd;
   font-weight: bold;
-  border: 1px solid rgba(0, 128, 128, 1);
-  background-color: rgba(0, 128, 128, 1);
+  border: 1px solid #118ab2;
+  background-color: #118ab2;
   padding: 0.5rem;
   border-radius: 8px;
 }
 .robotEmail {
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: center;
 }
 .robotPicture {
