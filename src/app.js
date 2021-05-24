@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
-import BarreDeRecherche from "./components/barreDeRecherche";
-import ListOfRobots from "./components/listOfRobots";
+import SearchBar from "./components/SearchBar";
+import RobotsList from "./components/RobotsList";
 import "./app.css";
-import Robot from "./components/robot";
-import Loader from "./components/loader";
+import RobotsDetails from "./components/RobotDetails";
+import Loader from "./components/Loader";
 
-const App = (props) => {
-  const [robots, setRobots] = useState([]);
-  const [robotFullDetails, setRobotFullDetails] = useState([]);
+const App = () => {
+  const [robotPresentation, setRobotPresentation] = useState([]);
+  const [robotDetails, setRobotDetails] = useState([]);
+  const [friends, setFriends] = useState(robotPresentation);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
 
@@ -19,23 +20,19 @@ const App = (props) => {
         return result.json();
       })
       .then(function (data) {
-        const robotsFriendsList = data.map((robot) => {
+        const robotsList = data.map((robot) => {
           return { id: robot.id, name: robot.name, email: robot.email };
         });
 
         setLoading(false);
-        setRobots(robotsFriendsList);
-        setRobotFullDetails(data);
-        setFriends(robotsFriendsList);
+        setRobotPresentation(robotsList);
+        setRobotDetails(data);
+        setFriends(robotsList);
       });
   }, []);
 
-  let [friends, setFriends] = useState(robots);
-
   const handleChange = (e) => {
-    e.preventDefault();
-
-    const filteredFriendsList = robots.filter((robot) => {
+    const filteredFriendsList = robotPresentation.filter((robot) => {
       return robot.name.toLowerCase().includes(e.target.value.toLowerCase());
     });
     setFriends(filteredFriendsList);
@@ -52,7 +49,7 @@ const App = (props) => {
           )}
 
           {location.pathname === "/" && (
-            <BarreDeRecherche
+            <SearchBar
               handleChange={handleChange}
               placeholder="Recherche"
               id="recherche"
@@ -63,12 +60,12 @@ const App = (props) => {
             <Route
               exact
               path="/"
-              render={() => <ListOfRobots friends={friends} />}
+              render={() => <RobotsList friends={friends} />}
             />
             <Route
               path="/robot/:id"
               render={({ match }) => (
-                <Robot fullInformation={robotFullDetails} match={match} />
+                <RobotsDetails fullInformation={robotDetails} match={match} />
               )}
             />
           </Switch>

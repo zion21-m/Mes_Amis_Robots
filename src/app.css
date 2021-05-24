@@ -164,3 +164,7 @@ body {
   color: rgb(47, 44, 214);
   font-size: 1rem;
 }
+.not-found {
+  color: #dad7cd;
+  font-size: 1.5rem;
+}

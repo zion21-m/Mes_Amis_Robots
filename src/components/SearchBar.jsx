@@ -1,4 +1,4 @@
-const BarreDeRecherche = (props) => {
+const SearchBar = (props) => {
   return (
     <div className={props.className}>
       <input
@@ -11,4 +11,4 @@ const BarreDeRecherche = (props) => {
   );
 };
 
-export default BarreDeRecherche;
+export default SearchBar;

@@ -1,29 +1,29 @@
 import { Link } from "react-router-dom";
 
-const Robot = (props) => {
-  const robotPersonalFriendlist = props.fullInformation.map((robotPersonal) => {
+const RobotsDetails = (props) => {
+  const RobotsDetailsList = props.fullInformation.map((robotDetails) => {
     return {
-      id: robotPersonal.id,
-      name: robotPersonal.name,
-      username: robotPersonal.username,
-      email: robotPersonal.email,
-      street: robotPersonal.address.street,
-      suite: robotPersonal.address.suite,
-      city: robotPersonal.address.city,
-      zipcode: robotPersonal.address.zipcode,
-      lat: robotPersonal.address.geo.lat,
-      lng: robotPersonal.address.geo.lng,
-      website: robotPersonal.website,
-      phone: robotPersonal.phone,
-      companyName: robotPersonal.company.name,
-      companyCatchPhrase: robotPersonal.company.catchPhrase,
-      bs: robotPersonal.company.bs,
+      id: robotDetails.id,
+      name: robotDetails.name,
+      username: robotDetails.username,
+      email: robotDetails.email,
+      street: robotDetails.address.street,
+      suite: robotDetails.address.suite,
+      city: robotDetails.address.city,
+      zipcode: robotDetails.address.zipcode,
+      lat: robotDetails.address.geo.lat,
+      lng: robotDetails.address.geo.lng,
+      website: robotDetails.website,
+      phone: robotDetails.phone,
+      companyName: robotDetails.company.name,
+      companyCatchPhrase: robotDetails.company.catchPhrase,
+      bs: robotDetails.company.bs,
     };
   });
 
   const getById = () => {
-    return robotPersonalFriendlist.find((friend) => {
-      return friend.id === Number(props.match.params.id);
+    return RobotsDetailsList.find((robot) => {
+      return robot.id === Number(props.match.params.id);
     });
   };
 
@@ -86,4 +86,4 @@ const Robot = (props) => {
   );
 };
 
-export default Robot;
+export default RobotsDetails;
