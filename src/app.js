@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
+import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import RobotsList from "./components/RobotsList";
 import "./app.css";
@@ -7,32 +8,27 @@ import RobotsDetails from "./components/RobotDetails";
 import Loader from "./components/Loader";
 
 const App = () => {
-  const [robotPresentation, setRobotPresentation] = useState([]);
+  const [robotsDatabase, setRobotsDatabase] = useState([]);
   const [robotDetails, setRobotDetails] = useState([]);
-  const [friends, setFriends] = useState(robotPresentation);
+  const [friends, setFriends] = useState(robotsDatabase);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
 
-  useEffect(function () {
+  useEffect(() => {
     setLoading(true);
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(function (result) {
-        return result.json();
-      })
-      .then(function (data) {
-        const robotsList = data.map((robot) => {
-          return { id: robot.id, name: robot.name, email: robot.email };
-        });
-
-        setLoading(false);
-        setRobotPresentation(robotsList);
-        setRobotDetails(data);
-        setFriends(robotsList);
+    axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
+      const robotsList = response.data.map((robot) => {
+        return { id: robot.id, name: robot.name, email: robot.email };
       });
+      setLoading(false);
+      setRobotsDatabase(robotsList);
+      setRobotDetails(response.data);
+      setFriends(robotsList);
+    });
   }, []);
 
   const handleChange = (e) => {
-    const filteredFriendsList = robotPresentation.filter((robot) => {
+    const filteredFriendsList = robotsDatabase.filter((robot) => {
       return robot.name.toLowerCase().includes(e.target.value.toLowerCase());
     });
     setFriends(filteredFriendsList);
