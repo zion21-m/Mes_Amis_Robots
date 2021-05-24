@@ -1,4 +1,4 @@
-import RobotInformation from "./RobotInformation";
+import RobotInformations from "./RobotInformations";
 
 const RobotsList = (props) => {
   const pictureUrl = "https://robohash.org/";
@@ -7,7 +7,7 @@ const RobotsList = (props) => {
     if (props.friends.length > 0) {
       return props.friends.map((friend) => {
         return (
-          <RobotInformation
+          <RobotInformations
             key={friend.id}
             name={friend.name}
             email={friend.email}
@@ -25,6 +25,6 @@ const RobotsList = (props) => {
       );
     }
   };
-  return <div className="listRobot">{renderRobots()}</div>;
+  return <div className="robotList">{renderRobots()}</div>;
 };
 export default RobotsList;

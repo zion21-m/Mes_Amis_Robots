@@ -47,7 +47,7 @@ body {
 .barreDeRecherche input:focus {
   outline: none;
 }
-.listRobot {
+.robotList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -66,6 +66,7 @@ body {
 }
 .robotFullInformation {
   background-color: #9eebcf;
+  font-size: 1.7rem;
   padding: 1rem;
   margin: 0 auto;
   margin-top: 1rem;
@@ -100,12 +101,14 @@ body {
 .robotName {
   font-size: 1.6rem;
   font-weight: bold;
+  color: #071b52;
 }
 .robotDetails {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .robotInformationB--bold {
   font-weight: bold;
+  line-height: 1.7;
 }
 .linkToHome {
   font-size: 0.9rem;

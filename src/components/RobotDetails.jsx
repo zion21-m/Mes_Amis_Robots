@@ -39,11 +39,11 @@ const RobotsDetails = (props) => {
         </div>
         <div className="robotInformation">
           <p className="robotName">
-            <span className="robotInformationB--bold">Name</span> :
+            <span className="robotInformationB--bold">Name</span> : &nbsp;
             {getById().name}
           </p>
           <p className="robotDetails">
-            <span className="robotInformationB--bold">Username</span> :
+            <span className="robotInformationB--bold">Username</span> : &nbsp;
             {getById().username}
           </p>
           <p className="robotDetails">
@@ -51,13 +51,10 @@ const RobotsDetails = (props) => {
             {getById().email}
           </p>
           <p className="robotDetails">
-            <span className="robotInformationB--bold">Adresse</span>
-            <br />
-            <p>
-              Appartment {getById().suite}, street {getById().street}, city
-              {getById().city}, zipcode {getById.zipcode}, geo: lat:
-              {getById().lat} lng: {getById().lng}
-            </p>
+            <span className="robotInformationB--bold">Adresse : </span>
+            Appartment {getById().suite}, street {getById().street}, city
+            {getById().city}, zipcode {getById.zipcode}, geo: lat:
+            {getById().lat} lng: {getById().lng}
           </p>
           <p className="robotDetails">
             <span className="robotInformationB--bold">Téléphone</span> :
