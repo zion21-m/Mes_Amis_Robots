@@ -1,4 +1,4 @@
-import RobotInformations from "./RobotInformations";
+import RobotPresentation from "./RobotPresentation";
 
 const RobotsList = (props) => {
   const pictureUrl = "https://robohash.org/";
@@ -7,7 +7,7 @@ const RobotsList = (props) => {
     if (props.friends.length > 0) {
       return props.friends.map((friend) => {
         return (
-          <RobotInformations
+          <RobotPresentation
             key={friend.id}
             name={friend.name}
             email={friend.email}

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-const RobotInformations = (props) => {
+const RobotPresentation = (props) => {
   return (
     <div className="cardRobot">
       <div className="robotPicture">
@@ -17,4 +17,4 @@ const RobotInformations = (props) => {
   );
 };
 
-export default RobotInformations;
+export default RobotPresentation;
