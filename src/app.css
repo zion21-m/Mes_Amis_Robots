@@ -5,7 +5,6 @@
 body {
   margin: 0;
   padding: 0;
-  /* background-color:#338180; */
   background: -webkit-gradient(
     linear,
     right top,
@@ -70,6 +69,7 @@ body {
   padding: 1rem;
   margin: 0 auto;
   margin-top: 1rem;
+  margin-bottom: 5rem;
   border-radius: 8px;
   color: #000000;
   display: flex;
@@ -77,13 +77,14 @@ body {
   align-items: center;
   transition: all 0.3s;
   display: flex;
-  width: 80%;
+  width: 60%;
 }
 .robotImgContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   transform: translateY(-20%);
+  padding-right: 1rem;
 }
 .robotInformation img {
   width: 20vh;
@@ -143,7 +144,6 @@ body {
 
 .loader {
   margin: 0 auto;
-  /* border: 20px solid black; */
   border-left: 20px solid indianred;
   border-right: 20px solid indigo;
   border-bottom: 20px solid white;
